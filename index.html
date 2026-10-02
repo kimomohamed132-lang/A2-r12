@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سؤال صغير ليك</title>
+    <!-- استخدام خط تجوّل المودرن والودود -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الديكورات الخلفية لتطابق الصورة -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <!-- النصوص الجانبية (تظهر في الشاشات الكبيرة) -->
+    <div class="floating-text text-right">
+        شكراً لك<br>مقدماً! <span>😊</span>
+    </div>
+    <div class="floating-text text-left">
+        <span>💙</span> كل رأي<br>يعمل فرق
+    </div>
+
+    <div class="feedback-card">
+        <div id="form-container">
+            <h2 class="title"><span>👀</span> سؤال صغير ليك... <span>✨</span></h2>
+            <p class="subtitle">إيه رأيك في الكورس؟</p>
+
+            <form id="feedback-form">
+                <!-- قسم التقييم -->
+                <div class="rating-group" id="rating-group">
+                    <label class="emoji-label">
+                        <input type="radio" name="rating" value="1">
+                        <div class="emoji-wrapper bg-pink"><span class="emoji">😫</span></div>
+                    </label>
+                    <label class="emoji-label">
+                        <input type="radio" name="rating" value="2">
+                        <div class="emoji-wrapper bg-orange"><span class="emoji">😕</span></div>
+                    </label>
+                    <label class="emoji-label">
+                        <input type="radio" name="rating" value="3">
+                        <div class="emoji-wrapper bg-yellow"><span class="emoji">😐</span></div>
+                    </label>
+                    <label class="emoji-label">
+                        <input type="radio" name="rating" value="4">
+                        <div class="emoji-wrapper bg-green"><span class="emoji">🙂</span></div>
+                    </label>
+                    <label class="emoji-label">
+                        <input type="radio" name="rating" value="5">
+                        <div class="emoji-wrapper bg-blue"><span class="emoji">🤩</span></div>
+                    </label>
+                </div>
+                
+                <p id="error-message" class="error-text hidden">اختار تقييم الأول ❤️</p>
+
+                <!-- الخطوات الإضافية (تظهر بعد اختيار التقييم) -->
+                <div id="extra-steps" class="hidden">
+                    <div class="input-group">
+                        <label for="feedback">💬 تحب تقولّي إيه؟</label>
+                        <textarea id="feedback" name="feedback" rows="3" placeholder="اكتب رأيك هنا "></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="name">
+                            <span>👤 تحب تكتب اسمك؟</span>
+                            <span class="optional-text">الاسم اختياري</span>
+                        </label>
+                        <input type="text" id="name" name="name" placeholder="اسمك (اختياري)">
+                    </div>
+
+                    <button type="submit" id="submit-btn">إرسال رأيي 🚀 🤍</button>
+                    <p id="submit-error" class="error-text hidden">حصلت مشكلة بسيطة، جرّب تاني.</p>
+                </div>
+            </form>
+        </div>
+
+        <!-- شاشة النجاح -->
+        <div id="success-container" class="hidden text-center">
+            <div class="success-icon">🎉</div>
+            <h2 class="title">شكرًا على رأيك!</h2>
+            <p class="subtitle">رأيك بيساعدني أطور الكورس وأخليه أفضل.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

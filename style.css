@@ -1,0 +1,266 @@
+/* إعدادات عامة */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background-color: #fafbfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #2d3748;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* الديكورات الخلفية */
+.bg-blobs {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+}
+
+.blob-1 { width: 400px; height: 400px; background: #e3f7ed; top: -100px; right: -100px; }
+.blob-2 { width: 300px; height: 300px; background: #ffe5ed; bottom: -50px; left: -50px; }
+.blob-3 { width: 350px; height: 350px; background: #e1f0ff; top: 20%; left: -100px; }
+.blob-4 { width: 450px; height: 450px; background: #f3e8ff; bottom: 10%; right: -150px; }
+
+/* النصوص الطائرة */
+.floating-text {
+    position: absolute;
+    color: #4a5568;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    text-align: center;
+    z-index: -1;
+}
+
+.floating-text.text-right {
+    top: 30%;
+    right: 15%;
+    transform: rotate(10deg);
+}
+
+.floating-text.text-left {
+    top: 50%;
+    left: 15%;
+    transform: rotate(-10deg);
+}
+
+/* تصميم البطاقة */
+.feedback-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    z-index: 1;
+}
+
+/* النصوص */
+.title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #2b3481; /* أزرق داكن/بنفسجي */
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #4a5568;
+    text-align: center;
+    font-weight: 700;
+}
+
+.text-center { text-align: center; }
+
+/* مجموعة التقييم (الـ Emojis) */
+.rating-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.emoji-label {
+    cursor: pointer;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.emoji-label input { display: none; }
+
+.emoji-wrapper {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* ألوان خلفيات الايموجي مطابقة للصورة */
+.bg-pink { background-color: #ffe5ed; }
+.bg-orange { background-color: #ffedd6; }
+.bg-yellow { background-color: #fdf2ce; }
+.bg-green { background-color: #e3f7ed; }
+.bg-blue { background-color: #e1f0ff; }
+
+.emoji-label:hover .emoji-wrapper {
+    transform: translateY(-3px);
+}
+
+/* عند اختيار الـ Emoji (إطار بنفسجي) */
+.emoji-label input:checked + .emoji-wrapper {
+    border-color: #7d5fff;
+    transform: scale(1.15);
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(125, 95, 255, 0.2);
+}
+
+/* بهتان باقي العناصر */
+.rating-group.has-selection .emoji-label input:not(:checked) + .emoji-wrapper {
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+/* الحقول والنماذج */
+.input-group {
+    margin-bottom: 20px;
+    animation: fadeInDown 0.5s ease;
+}
+
+.input-group label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2b3481;
+}
+
+.optional-text {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    font-weight: 500;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #edf2f7;
+    background-color: #f7fafc;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+    resize: vertical;
+    color: #2d3748;
+}
+
+textarea::placeholder, input[type="text"]::placeholder {
+    color: #cbd5e0;
+}
+
+textarea:focus, input[type="text"]:focus {
+    border-color: #7d5fff;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(125, 95, 255, 0.1);
+}
+
+/* الزر البنفسجي */
+button {
+    width: 100%;
+    background-color: #7d5fff; /* لون مطابق للصورة */
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: fadeInDown 0.6s ease;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+button:hover {
+    background-color: #6b4ce6;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* الشاشات والأخطاء */
+.hidden { display: none !important; }
+
+.error-text {
+    color: #e53e3e;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+    animation: fadeIn 0.3s;
+}
+
+.success-icon {
+    font-size: 5rem;
+    margin-bottom: 15px;
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* إخفاء النصوص الجانبية في شاشات الموبايل لتوفير مساحة */
+@media (max-width: 1024px) {
+    .floating-text { display: none; }
+}
+
+@media (max-width: 400px) {
+    .emoji-wrapper { width: 45px; height: 45px; font-size: 1.4rem; }
+    .feedback-card { padding: 25px 20px; }
+}
